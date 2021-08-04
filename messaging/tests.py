@@ -4,9 +4,10 @@ Created on 3 Aug 2021
 @author: eytan
 '''
 from django.test import TestCase
-from messaging.urls import message_receive_view
+from messaging.urls import message_receive_view, message_send_view
 from rest_framework.test import APIRequestFactory 
 from messaging.models import Message
+from django.urls.conf import path
 
 class TestMessageView(TestCase):
     
@@ -36,6 +37,13 @@ class TestMessageView(TestCase):
         response = message_receive_view(request, 'kaka')
         self.assertEqual(200, response.status_code)
         self.assertEqual([], response.data)
+        
+    def test_send_message(self):
+        
+        request = self._factory.post(path='messages/send', data={'sender': 'moshe', 'receipient':'yakov', 'body':'Hshalom Lach?'})
+        response = message_send_view(request)
+        self.assertEqual(201, response.status_code)
+        
         
         
         

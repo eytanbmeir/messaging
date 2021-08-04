@@ -106,6 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+MESSAGE_CLUSTER = []#[{"ip": "34.228.248.89", "port": 8000}, {"ip":"3.211.125.117", 8000}]
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
