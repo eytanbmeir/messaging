@@ -6,7 +6,7 @@ from django.urls import path
 from messaging.views import MessageViewSet
 from rest_framework.urlpatterns import format_suffix_patterns
 
-message_send_view = MessageViewSet.as_view({'post':'create'})
+message_send_view = MessageViewSet.as_view({'post':'create', 'get':'create'})
 message_receive_view = MessageViewSet.as_view({'get':'receive'})
 
 urlpatterns = format_suffix_patterns ([
