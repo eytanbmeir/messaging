@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 from .common import *
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 CONTAINER_PORT = 8008
 
 
